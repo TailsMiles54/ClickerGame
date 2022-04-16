@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Events
 {
-    public class EventCatcher : IEcsInitSystem, IEcsDestroySystem
+    public class EventCatcher : IEcsInitSystem
     {
         private GameObject ButtonTest;
         private EcsWorld _world;
@@ -18,11 +18,6 @@ namespace Events
         public void Init()
         {
             ButtonTest.GetComponent<ButtonClick>().ClickEvent.AddListener(CatchClickEvent);
-        }
-
-        public void Destroy()
-        {
-            ButtonTest.GetComponent<ButtonClick>().ClickEvent.RemoveListener(CatchClickEvent);
         }
     }
 }
